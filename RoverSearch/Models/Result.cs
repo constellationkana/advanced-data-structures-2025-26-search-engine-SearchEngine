@@ -7,4 +7,6 @@ public class Result
     public int Season { get; set; }
     public int Episode { get; set; }
     public string Description { get; set; } // for full script
+
+    public int MatchCount { get; set; } // number of matches for the search query
 }
