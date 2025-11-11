@@ -1,0 +1,17 @@
+﻿@model RoverSearch.Models.Result
+
+<div class="container mt-4">
+    <h2>@Model.Title</h2>
+    <p><strong>Season:</strong> @Model.Season | <strong>Episode:</strong> @Model.Episode</p>
+
+    @if (!string.IsNullOrEmpty(ViewData["Query"]?.ToString()))
+    {
+        <p><em>Highlighting matches for: <strong>@ViewData["Query"]</strong></em></p>
+    }
+
+    <div class="p-3 bg-light border rounded" style="white-space: pre-wrap;">
+        @Html.Raw(Model.Description)
+    </div>
+
+    <a asp-action="Search" asp-route-query="@ViewData["Query"]" class="btn btn-secondary mt-3">Back to Results</a>
+</div>
